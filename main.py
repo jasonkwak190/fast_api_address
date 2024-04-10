@@ -38,7 +38,7 @@ async def download_and_extract(da_date: str):
         raise HTTPException(status_code=500, detail=f"Failed to extract zip file: {str(e)}")
 
     try:
-        # 한개의 CSV 파일로 변환
+        # 한개의 CSV 파일로 변환 
         with open("merged_data.csv", "w", encoding="UTF-8") as output_file:
             # kor_header = "도로명주소관리번호|법정동코드|시도명|시군구명|법정읍면동명|법정리명|산여부|지번본번(번지)|지번부번(호)|도로명코드|도로명|지하여부|건물본번|건물부번|행정동코드|행정동명|기초구역번호|이전도로명주소|효력발생일|공동주택구분|이동사유코드|건축물대장건물명|시군구용건물명|비고\n"
             header = "add_no|cd_bubjung|add_sido|add_sigun|add_bubjungdong|add_bubjunglee|is_mountain|add_jibunbon|add_jibunbu|cd_doro|add_doro|add_is_underground|add_building_bon|add_building_bu|cd_haeng_code|add_haengjungdong|zip_code|add_doro_before|da_date_enrolled|add_is_apartment_house|add_is_changed|add_building_name|add_sigungu_building_name|bigo\n"
